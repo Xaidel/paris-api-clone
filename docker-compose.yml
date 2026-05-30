@@ -1,14 +1,8 @@
 services:
   db:
     image: postgres:17
-    env_file:
-      - .env
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}" ]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -21,24 +15,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    env_file:
-      - .env
     depends_on:
       db:
         condition: service_healthy
-    environment:
-      ENV: ${ENV}
-      SERVICE_NAME: ${SERVICE_NAME}
-      HTTP_PORT: ${HTTP_PORT}
-      HTTP_READ_TIMEOUT: ${HTTP_READ_TIMEOUT}
-      HTTP_WRITE_TIMEOUT: ${HTTP_WRITE_TIMEOUT}
-      HTTP_IDLE_TIMEOUT: ${HTTP_IDLE_TIMEOUT}
-      HTTP_SHUTDOWN_TIMEOUT: ${HTTP_SHUTDOWN_TIMEOUT}
-      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}?sslmode=disable
-      DATABASE_PING_TIMEOUT: ${DATABASE_PING_TIMEOUT}
-      LOG_LEVEL: ${LOG_LEVEL}
-      LOG_FILE_PATH: /var/log/paris-api/paris-api.jsonl
-      MIGRATIONS_PATH: /app/internal/infrastructure/db/migrations
     ports:
       - "9000:9000"
     volumes:
