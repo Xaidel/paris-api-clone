@@ -52,7 +52,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - ./tmp/logs:/var/log/paris-api
+      - api_logs:/var/log/paris-api
 
 volumes:
   postgres_data:
