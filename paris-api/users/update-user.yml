@@ -1,0 +1,31 @@
+info:
+  name: update-user
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: http://localhost:9000/api/v1/users/:id
+  headers:
+    - name: X-Actor-User-ID
+      value: 1e7c561cf56fdf2f2bbb492f51704955
+    - name: X-Actor-Group-ID
+      value: admin
+  params:
+    - name: id
+      value: 2d29fc846b7d95e4b22a33d43d9aefbc
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "username": "sample@gyud.ai",
+        "password": "87654321"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

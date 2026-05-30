@@ -1,0 +1,24 @@
+info:
+  name: delete-sector
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: http://localhost:9000/api/v1/sectors/:id
+  headers:
+    - name: X-Actor-User-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300002
+    - name: X-Actor-Group-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300001
+  params:
+    - name: id
+      value: 019d53f8-884f-76c6-a3d9-46375a6d1ae2
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

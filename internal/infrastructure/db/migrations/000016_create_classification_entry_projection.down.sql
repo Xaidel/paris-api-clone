@@ -1,0 +1,8 @@
+DROP INDEX IF EXISTS idx_classification_entry_embedding_sector_hnsw;
+DROP INDEX IF EXISTS idx_classification_entry_embedding_u2_hnsw;
+DROP INDEX IF EXISTS idx_classification_entry_embedding_u1_hnsw;
+DROP INDEX IF EXISTS idx_classification_entry_embedding_model_active;
+DROP INDEX IF EXISTS idx_classification_entry_list_type_active;
+
+DROP TABLE IF EXISTS classification_entry_embedding;
+DROP TABLE IF EXISTS classification_entry;

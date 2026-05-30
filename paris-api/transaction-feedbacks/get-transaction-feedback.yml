@@ -1,0 +1,24 @@
+info:
+  name: get-transaction-feedback
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: http://localhost:9000/api/v1/transactions/:id/feedback
+  headers:
+    - name: X-Actor-User-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300002
+    - name: X-Actor-Group-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300001
+  params:
+    - name: id
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300001
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

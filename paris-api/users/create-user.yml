@@ -1,0 +1,29 @@
+info:
+  name: create-user
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http:localhost:9000/api/v1/users
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: X-Actor-User-ID
+      value: 1e7c561cf56fdf2f2bbb492f51704955
+    - name: X-Actor-Group-ID
+      value: admin
+  body:
+    type: json
+    data: |-
+      {
+        "username": "test@gyud.ai",
+        "password":"12345678"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

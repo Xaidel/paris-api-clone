@@ -1,0 +1,28 @@
+info:
+  name: create-U1
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:9000/api/v1/u1-list
+  headers:
+    - name: X-Actor-User-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300002
+    - name: X-Actor-Group-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300001
+  body:
+    type: json
+    data: |-
+      {
+        "sector": "Energy",
+        "eligible_operation_type": "Generation of renewable energy (e.g., from wind, solar, wave power, etc.) with negligible lifecycle GHG emissions.",
+        "condition_guidance": "Includes generation of heat or cooling"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

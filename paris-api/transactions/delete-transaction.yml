@@ -1,0 +1,26 @@
+info:
+  name: delete-transaction
+  type: http
+  seq: 1
+
+http:
+  method: DELETE
+  url: http://localhost:9000/api/v1/transactions/:id
+  headers:
+    - name: X-Actor-User-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300002
+    - name: X-Actor-Group-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300001
+  params:
+    - name: id
+      value: 0195f3fd-c1a8-7366-a9f9-d81f9f2f8e60
+      type: path
+  body:
+    type: none
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

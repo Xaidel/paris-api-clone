@@ -1,0 +1,24 @@
+info:
+  name: download-transaction-upload
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: http://localhost:9000/api/v1/transaction-uploads/:id/download
+  headers:
+    - name: X-Actor-User-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300002
+    - name: X-Actor-Group-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300001
+  params:
+    - name: id
+      value: 0195f3fd-c1a8-7366-a9f9-d81f9f2f8e5f
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

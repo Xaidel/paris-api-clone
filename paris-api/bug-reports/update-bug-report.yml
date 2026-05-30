@@ -1,0 +1,34 @@
+info:
+  name: update-bug-report
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: http://localhost:9000/api/v1/bug-reports/:id
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: X-Actor-User-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300002
+    - name: X-Actor-Group-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300001
+  params:
+    - name: id
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300002
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Incorrect classification (updated)",
+        "description": "Transaction was classified as U2 but should be U1.",
+        "status": "Closed"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

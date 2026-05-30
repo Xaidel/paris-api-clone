@@ -1,0 +1,16 @@
+.git/
+.gitignore
+
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+Makefile
+README.md
+AGENTS.md
+docs/
+
+bin/
+tmp/
+tests/
+paris-api/

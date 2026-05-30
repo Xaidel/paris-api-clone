@@ -1,0 +1,3 @@
+ALTER TABLE "user"
+DROP COLUMN IF EXISTS password_hash,
+DROP COLUMN IF EXISTS username;

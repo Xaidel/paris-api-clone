@@ -1,0 +1,30 @@
+info:
+  name: get-transaction-navigation
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: http://localhost:9000/api/v1/transactions/:id/navigation?classification=needs%20review&step=4
+  headers:
+    - name: X-Actor-User-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300002
+    - name: X-Actor-Group-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300001
+  params:
+    - name: id
+      value: 019d7c75-98db-7fe0-a926-4cb03e56ad70
+      type: path
+    - name: classification
+      value: needs review
+      type: query
+    - name: step
+      value: "4"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

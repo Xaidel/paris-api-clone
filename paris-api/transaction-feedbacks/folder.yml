@@ -1,0 +1,7 @@
+info:
+  name: transaction-feedbacks
+  type: folder
+  seq: 8
+
+request:
+  auth: inherit

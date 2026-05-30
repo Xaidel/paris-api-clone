@@ -1,0 +1,27 @@
+info:
+  name: delete-U2
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: http://localhost:9000/api/v1/u2-exclusion-list/:id
+  headers:
+    - name: X-Actor-User-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300002
+    - name: X-Actor-Group-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300001
+  params:
+    - name: id
+      value: 019d5314-5d14-71ff-92ff-7632b58df8d8
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

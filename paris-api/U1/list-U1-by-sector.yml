@@ -1,0 +1,24 @@
+info:
+  name: list-U1-by-sector
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: http://localhost:9000/api/v1/u1-list?sector=energy
+  headers:
+    - name: X-Actor-User-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300002
+    - name: X-Actor-Group-ID
+      value: 01962b8f-aeb2-7e03-a8ff-1edce1300001
+  params:
+    - name: sector
+      value: energy
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
