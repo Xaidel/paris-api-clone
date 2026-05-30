@@ -76,3 +76,4 @@ secrets/
 tmp/
 .transaction_uploads/
 .spec
+.portdeploy.sealed
